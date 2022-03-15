@@ -8,8 +8,9 @@ import Partly from '../images/part-cloud.png';
 const refresh = () => {
   window.location.reload();
 }
-function Condition({cond, description}){
+function Condition({cond, description, data}){
   if (cond==="Clouds"){
+    console.log("icon: "+data.weather[0].icon)
     return <div><img src={Cloud} alt="Logo" />{description}</div>
   }
 
@@ -39,7 +40,7 @@ const WeatherCard = ({weatherData}) => (
       </div>
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
-        <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description}/></p>
+        <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData}/></p>
       </div>
 
       <div className="flex">
