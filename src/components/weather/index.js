@@ -6,17 +6,7 @@ const refresh = () => {
   window.location.reload();
 }
 function Condition({cond, description, data,icon}){
-  if (cond==="Clouds"){
-    console.log("icon: "+data.weather[0].icon)
     return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
-  }
-
-  else if (cond==="Sun"){
-    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
-  }
-  else{
-    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
-  }
 }
 function IsGood(props){
   const temperature=Math.round(props.temperature)
