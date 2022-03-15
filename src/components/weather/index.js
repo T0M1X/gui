@@ -2,23 +2,20 @@ import React from 'react';
 import './styles.css';
 import moment from 'moment';
 import { Button } from 'semantic-ui-react';
-import Cloud from '../images/cloud.png';
-import Sun from '../images/sun.png';
-import Partly from '../images/part-cloud.png';
 const refresh = () => {
   window.location.reload();
 }
-function Condition({cond, description, data}){
+function Condition({cond, description, data,icon}){
   if (cond==="Clouds"){
     console.log("icon: "+data.weather[0].icon)
-    return <div><img src={Cloud} alt="Logo" />{description}</div>
+    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
   }
 
   else if (cond==="Sun"){
-    return <div><img src={Sun} alt="Logo" />{description}</div>
+    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
   }
   else{
-    return <div><img src={Partly} alt="Logo" /> {description}</div>
+    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
   }
 }
 function IsGood(props){
@@ -40,7 +37,8 @@ const WeatherCard = ({weatherData}) => (
       </div>
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
-        <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData}/></p>
+        <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData} icon={weatherData.weather[0].icon}/></p>
+        <p>{weatherData.weather[0].icon}</p>
       </div>
 
       <div className="flex">
