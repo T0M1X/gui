@@ -35,6 +35,7 @@ const WeatherCard = ({weatherData}) => (
         <p className="header">{weatherData.name}</p>
         <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
       </div>
+
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
         <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData} icon={weatherData.weather[0].icon}/></p>
@@ -54,7 +55,7 @@ const WeatherCard = ({weatherData}) => (
         <p className="day">Crops Assist</p>
         <p className="description"><IsGood temperature={weatherData.main.temp}/></p>
       </div>
-    
+
   </div>
 )
 
