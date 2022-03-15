@@ -38,7 +38,6 @@ const WeatherCard = ({weatherData}) => (
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
         <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData} icon={weatherData.weather[0].icon}/></p>
-        <p>{weatherData.weather[0].icon}</p>
       </div>
 
       <div className="flex">
