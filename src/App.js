@@ -35,7 +35,6 @@ export default function App() {
           <Dimmer active>
             <Loader>Loading..</Loader>
           </Dimmer>
-          
        </div>
      )}
  </div>
