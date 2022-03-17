@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.css';
 import moment from 'moment';
 import { Button } from 'semantic-ui-react';
+import classNames from 'classnames';
+
 const refresh = () => {
   window.location.reload();
 }
@@ -16,11 +18,16 @@ function IsGood(props){
   }
   else{
     return <h1>Ideal for crops!</h1>
+
   }
 }
 
+
 const WeatherCard = ({weatherData}) => (
-  <div className="main">
+  <div className={classNames({
+    'main': true,
+    'hot' : weatherData.main.temp > 20
+  })}>
 
       <div className="top">
         <p className="header">{weatherData.name}</p>
