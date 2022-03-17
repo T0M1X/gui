@@ -32,7 +32,7 @@ const WeatherCard = ({weatherData}) => (
 
       <div className="top">
         <p className="header">{weatherData.name}</p>
-        <Button className="button" inverted color='blue'  onClick={refresh}><img src={`images/refresh.png`}></img></Button>
+        <Button className="button" inverted color='blue'  onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
       </div>
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
