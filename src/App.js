@@ -2,7 +2,6 @@ import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
 import { Dimmer, Loader } from 'semantic-ui-react';
-import $ from 'jquery';
 export default function App() {
 
   const [lat, setLat] = useState([]);
@@ -14,7 +13,7 @@ export default function App() {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
-      if(lat!="" && long!=""){
+      if(lat!=="" && long!==""){
       await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
       .then(res => res.json())
       .then(result => {
