@@ -8,7 +8,7 @@ const refresh = () => {
   window.location.reload();
 }
 function Condition({description, icon}){
-  return <div><img src={`images/${icon}.png`} className="images" alt="Logo" />{description}</div>
+  return <><img src={`images/${icon}.png`} className="images" alt="Logo" />{description}</>
 }
  
 function IsGood(props){
@@ -50,7 +50,10 @@ const WeatherCard = ({weatherData}) => (
 
       <div className="flex">
         <p className="day">Crops Assist</p>
-        <p className="description"><IsGood temperature={weatherData.main.temp}/></p>
+        <div className="description"><IsGood temperature={weatherData.main.temp}/></div>
+        {/* <p className="description">{
+          Math.round(weatherData.main.temp) <= 20 ? 'Too cold for crops!' : 'Ideal for crops!'
+        }</p> */}
       </div>
     
   </div>
