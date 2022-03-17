@@ -51,9 +51,6 @@ const WeatherCard = ({weatherData}) => (
       <div className="flex">
         <p className="day">Crops Assist</p>
         <div className="description"><IsGood temperature={weatherData.main.temp}/></div>
-        {/* <p className="description">{
-          Math.round(weatherData.main.temp) <= 20 ? 'Too cold for crops!' : 'Ideal for crops!'
-        }</p> */}
       </div>
     
   </div>
