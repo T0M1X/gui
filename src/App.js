@@ -14,11 +14,10 @@ export default function App() {
         setLong(position.coords.longitude);
       });
       if(lat!=="" && long!==""){
-      await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
+      await fetch("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=7474326d53564eae1b93d73f4423dc98")
       .then(res => res.json())
       .then(result => {
         setData(result)
-        console.log(result);
       });}
     }
     fetchData();
