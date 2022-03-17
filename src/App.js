@@ -13,12 +13,11 @@ export default function App() {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
-      if(lat!=="" && long!==""){
       await fetch("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=7474326d53564eae1b93d73f4423dc98")
       .then(res => res.json())
       .then(result => {
         setData(result)
-      });}
+      });
     }
     fetchData();
   }, [lat,long])
