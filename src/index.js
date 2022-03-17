@@ -5,12 +5,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-<<<<<<< HEAD
-  
-=======
->>>>>>> 2766398d7ee43b80c1c4d74691f636dd35dfb503
-    <App />
+ReactDOM.render
+(    <App />
   ,
   document.getElementById('root')
 );
