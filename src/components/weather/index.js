@@ -8,7 +8,7 @@ const refresh = () => {
   window.location.reload();
 }
 function Condition({description, icon}){
-  return <><img src={`images/${icon}.png`} className="images" alt="Logo" />{description}</>
+  return <><img src={`images/${icon}.png`} className="images" alt="Logo" /><br/>{description}</>
 }
  
 function IsGood(props){
