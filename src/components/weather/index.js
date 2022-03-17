@@ -5,9 +5,10 @@ import { Button } from 'semantic-ui-react';
 const refresh = () => {
   window.location.reload();
 }
-function Condition({cond, description, data,icon}){
-    return <div><img src={`images/${icon}.png`} alt="Logo" />{description}</div>
+function Condition({description, icon}){
+  return <div><img src={`images/${icon}.png`} className="images" alt="Logo" />{description}</div>
 }
+ 
 function IsGood(props){
   const temperature=Math.round(props.temperature)
   if (temperature<=20){
@@ -25,10 +26,9 @@ const WeatherCard = ({weatherData}) => (
         <p className="header">{weatherData.name}</p>
         <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
       </div>
-
       <div className="flex">
         <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
-        <p className="description"><Condition cond={weatherData.weather[0].main} description={weatherData.weather[0].description} data={weatherData} icon={weatherData.weather[0].icon}/></p>
+        <p className="description"><Condition description={weatherData.weather[0].description} icon={weatherData.weather[0].icon}/></p>
       </div>
 
       <div className="flex">
@@ -45,7 +45,7 @@ const WeatherCard = ({weatherData}) => (
         <p className="day">Crops Assist</p>
         <p className="description"><IsGood temperature={weatherData.main.temp}/></p>
       </div>
-
+    
   </div>
 )
 
