@@ -35,18 +35,20 @@ const WeatherCard = ({weatherData}) => (
         <Button className="button" inverted color='blue'  onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
       </div>
       <div className="flex">
-        <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
+        {/* <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p> */}
+        <p className="temperature">{weatherData.main.temp} &deg;C</p>
         <p className="description"><Condition description={weatherData.weather[0].description} icon={weatherData.weather[0].icon}/></p>
       </div>
 
       <div className="flex">
-        <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p>
+        {/* <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p> */}
+        <p className="temp">Wind Speed: {weatherData.wind.speed}mph</p>
         <p className="temp">Humidity: {weatherData.main.humidity} %</p>
       </div>
 
       <div className="flex">
-        <p className="sunrise-sunset">Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-        <p className="sunrise-sunset">Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
       </div>
 
       <div className="flex">

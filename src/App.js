@@ -1,7 +1,9 @@
 import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
+import Homepage from './components/weather/Homepage';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 export default function App() {
 
   const [lat, setLat] = useState([]);
@@ -24,17 +26,23 @@ export default function App() {
   
 
   return (
-    <div className="container">
-      {(typeof data.main != 'undefined') ? (
-        <Weather weatherData={data}/>
-      ): (
-        <div>
-          <Dimmer active>
-            <Loader>Loading..</Loader>
-          </Dimmer>
-       </div>
-     )}
-     
- </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/weather' element={
+          <div className="container">
+          {(typeof data.main != 'undefined') ? (
+            <Weather weatherData={data}/>
+          ): (
+            <div>
+              <Dimmer active>
+                <Loader>Loading..</Loader>
+              </Dimmer>
+          </div>
+        )}
+        </div>
+        } />
+      </Routes>
+    </Router>
   );
 }

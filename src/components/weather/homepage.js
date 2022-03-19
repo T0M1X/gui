@@ -1,8 +1,9 @@
-import React from 'react';
-import './styles.css';
-import moment from 'moment';
-import { Button } from 'semantic-ui-react';
-const refresh = () => {
-    window.location.reload();
+import React from 'react'
+
+function Homepage() {
+  return (
+    <h1>homepage need to update by adding a button that says display weather. Should also show the day</h1>
+  )
 }
 
+export default Homepage

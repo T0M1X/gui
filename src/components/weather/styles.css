@@ -69,13 +69,19 @@
     display: flex;
     justify-content: space-between;
 }
+.flex .temperature{
+    font-size: 40px;
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+}
 
-.sunrise-sunset{
+/* .sunrise-sunset{
     padding: 15px;
     color: whitesmoke;
     font-family: 'Recursive', sans-serif;
     font-size: 16px;
-}
+} */
 
 .description{
     padding: 9px;
