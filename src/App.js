@@ -24,6 +24,9 @@ export default function App() {
 
   return (
     <Router>
+      <nav>
+        
+      </nav>
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/weather' element={
