@@ -1,10 +1,11 @@
 import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
-import Homepage from './components/weather/homepage';
+import Homepage from './components/weather/Homepage';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
+import ExtraWeather from './components/weather/ExtraWeather';
 export default function App() {
 
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ export default function App() {
         
       </nav>
       <Routes>
-        <Route path='/' element={<Homepage />} />
+        <Route path='/' element={<Homepage weatherData={data}/>} />
         <Route path='/weather' element={
           <div className="container">
           {(typeof data.main != 'undefined') ? (
@@ -42,7 +43,9 @@ export default function App() {
         )}
         </div>
         } />
+        <Route path='/extraWeather' element={<ExtraWeather weatherData={data}/>}/>
       </Routes>
+
     </Router>
   );
 }

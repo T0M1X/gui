@@ -1,9 +1,34 @@
-import React from 'react'
+import React from "react";
+import "./styles.css";
+import "./Homepage.css"
+import moment from 'moment';
+import { Button } from "semantic-ui-react";
+import {Link} from 'react-router-dom';
 
-function Homepage() {
+function Homepage({ weatherData }) {
+
+  
   return (
-    <h1>homepage need to update by adding a button that says display weather. Should also show the day</h1>
-  )
+    
+    <div className="container">
+      <div className="main">
+        <div className="top">
+          <p className="header">{weatherData.name}</p>
+          <Button className="button" inverted color="blue" onClick={() => {window.location.reload()}}>
+            <img className="refresh-button" src={`images/refresh.png`}></img>
+          </Button>
+        </div>
+        <div>
+        <div className="day">
+          <h1>{moment().format('dddd')}</h1>
+          <p>{moment().format('LL')}</p>
+        </div>
+        {/* <button className="weatherButton">Display Weather</button> */}
+        <Link to='/weather'><button className="weatherButton">Display Weather</button></Link>
+      </div>
+      </div>
+    </div>
+  );
 }
 
-export default Homepage
+export default Homepage;
