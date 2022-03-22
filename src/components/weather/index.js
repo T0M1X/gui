@@ -14,12 +14,17 @@ function Condition({description, icon}){
  
 function IsGood(props){
   const temperature=Math.round(props.temperature)
-  if (temperature<=20){
+  if (temperature<=15 && temperature >= 0){
     return <h1>Too cold for crops!</h1>
   }
-  else{
+  else if (temperature > 15 && temperature < 25){
     return <h1>Ideal for crops!</h1>
-
+  }
+  else if (temperature >= 30){
+    return <h1>Too hot for crops!</h1>
+  }
+  else{
+    return <h1>It is below freezing! Way to cold for crops!</h1>
   }
 }
 
@@ -27,7 +32,9 @@ function IsGood(props){
 const WeatherCard = ({weatherData}) => (
   <div className={classNames({
     'main': true,
-    'hot' : weatherData.main.temp > 20
+    'ideal' : weatherData.main.temp > 15 && weatherData.main.temp <25,
+    'hot' : weatherData.main.temp >= 30,
+    'cold' : weatherData.main.temp < 0
   })}>
 
       <div className="top">

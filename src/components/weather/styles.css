@@ -9,9 +9,19 @@
     height: 736px;
 }
 
+.ideal{
+    background: rgb(255,166,0) !important;
+    background: linear-gradient(315deg, rgba(255,166,0,1) 30%, rgba(0,184,145,1) 100%) !important;
+}
+
 .hot{
-    background-color: #eaf818 !important; 
-    background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%) !important;
+    background: rgb(255,166,0) !important;
+    background: radial-gradient(circle, rgba(255,166,0,1) 0%, rgba(255,123,0,1) 76%, rgba(255,252,0,1) 100%) !important;
+}
+
+.cold{
+    background: rgb(0,31,255) !important;
+    background: radial-gradient(circle, rgba(0,31,255,1) 0%, rgba(0,254,255,1) 76%, rgba(0,255,140,1) 100%) !important;
 }
 
 .top{
