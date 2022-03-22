@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
-import Homepage from './components/weather/homepage';
+import Homepage from './components/weather/Homepage';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
@@ -25,9 +25,6 @@ export default function App() {
 
   return (
     <Router>
-      <nav>
-        
-      </nav>
       <Routes>
         <Route path='/' element={<Homepage weatherData={data}/>} />
         <Route path='/weather' element={

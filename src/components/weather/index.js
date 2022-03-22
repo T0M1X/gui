@@ -36,7 +36,6 @@ const WeatherCard = ({weatherData}) => (
     'hot' : weatherData.main.temp >= 30,
     'cold' : weatherData.main.temp < 0
   })}>
-
       <div className="top">
         <p className="header">{weatherData.name}</p>
         <Button className="button" inverted color='blue'  onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
