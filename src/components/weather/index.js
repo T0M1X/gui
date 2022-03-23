@@ -32,34 +32,34 @@ function IsGood(props){
 const WeatherCard = ({weatherData}) => (
   <div className={classNames({
     'main': true,
-    'ideal' : weatherData.main.temp > 15 && weatherData.main.temp <25,
-    'hot' : weatherData.main.temp >= 30,
-    'cold' : weatherData.main.temp < 0
+    'ideal' : weatherData.current.temp > 15 && weatherData.current.temp <25,
+    'hot' : weatherData.current.temp >= 30,
+    'cold' : weatherData.current.temp < 0
   })}>
       <div className="top">
-        <p className="header">{weatherData.name}</p>
+        <p className="header">{weatherData.timezone}</p>
         <Button className="button" inverted color='blue'  onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
       </div>
       <div className="flex">
         {/* <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p> */}
-        <p className="temperature">{weatherData.main.temp} &deg;C</p>
-        <p className="description"><Condition description={weatherData.weather[0].description} icon={weatherData.weather[0].icon}/></p>
+        <p className="temperature">{weatherData.current.temp} &deg;C</p>
+        <p className="description"><Condition description={weatherData.current.weather[0].description} icon={weatherData.current.weather[0].icon}/></p>
       </div>
 
       <div className="flex">
         {/* <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p> */}
-        <p className="temp">Wind Speed: {weatherData.wind.speed}mph</p>
-        <p className="temp">Humidity: {weatherData.main.humidity} %</p>
+        <p className="temp">Wind Speed: {weatherData.current.wind_speed}mph</p>
+        <p className="temp">Humidity: {weatherData.current.humidity} %</p>
       </div>
 
       <div className="flex">
-        <p className="temp">Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-        <p className="temp">Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunrise: {new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunset: {new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
       </div>
 
       <div className="flex">
         <p className="day">Crops Assist</p>
-        <div className="description"><IsGood temperature={weatherData.main.temp}/></div>
+        <div className="description"><IsGood temperature={weatherData.current.temp}/></div>
       </div>
     
   </div>

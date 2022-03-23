@@ -28,13 +28,13 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={(typeof data.main!='undefined')?(<Homepage weatherData={data} name={data.name}/>):
+        <Route path='/' element={(typeof data.current!='undefined')?(<Homepage weatherData={data} name={data.name}/>):
         (<Dimmer active>
                 <Loader>Loading..</Loader>
               </Dimmer>)} />
         <Route path='/weather' element={
           <div className="container">
-          {(typeof data.main != 'undefined') ? (
+          {(typeof data.current != 'undefined') ? (
             <Weather weatherData={data}/>
           ): (
             <div>
