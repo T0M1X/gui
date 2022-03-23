@@ -48,7 +48,7 @@ function ExtraWeather({ weatherData }) {
               Monday
             </td>
             <td>
-              <img src="images/01d.png" class="IconTD"></img>
+              <img src="images/01d.png" className="IconTD"></img>
             </td>
             <td>
               2.06 mph
@@ -66,7 +66,7 @@ function ExtraWeather({ weatherData }) {
               Tuesday
             </td>
             <td>
-              10c
+            <img src="images/04d.png" className="IconTD"></img>
             </td>
             <td>
               3.62 mph
