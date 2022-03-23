@@ -27,7 +27,7 @@ function Homepage({ weatherData,name }) {
             <h1>{moment().format("dddd")}</h1>
             <p>{moment().format("LL")}</p>
           </div>
-          <Link to="/forecast/1">
+          <Link to="/weather">
             <button className="weatherButton">Display Weather</button>
           </Link>
         </div>

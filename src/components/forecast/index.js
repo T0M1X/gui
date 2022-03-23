@@ -32,10 +32,10 @@ const WeatherForecast =({weatherForecast})=>{
     const tmp=weatherForecast.list[0]
     console.log(tmp)
     console.log(window.location.pathname)
+    console.log(tmp.sunrise)
     return(
         <div>
-          
-          
+                   
             {(typeof tmp.main != 'undefined') ? (
             <DailyForecast DailyWeather={weatherForecast.list[0]} city={weatherForecast.city.name}/>
             

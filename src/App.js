@@ -18,7 +18,7 @@ export default function App() {
       .then(res => res.json())
       .then(result => {
         setData(result)
-        console.log(result.city.name)
+        console.log(result)
       });}
     }
     fetchData();
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={(typeof data.city!='undefined')?(<Homepage weatherData={data} name={data.city.name}/>):
+        <Route path='/' element={(typeof data.city!='undefined')?(<Homepage weatherData={data} name={data.name}/>):
         (<Dimmer active>
                 <Loader>Loading..</Loader>
               </Dimmer>)} />
@@ -45,19 +45,7 @@ export default function App() {
         )}
         </div>
         } />
-        <Route path='/forecast/:id' element={
-          <div className="container">
-          {(typeof data.city != 'undefined') ? (
-            <Forecast weatherForecast={data}/>
-          ): (
-            <div>
-              <Dimmer active>
-                <Loader>Loading..</Loader>
-              </Dimmer>
-          </div>
-        )}
-        </div>
-        } />
+        
         <Route path='/extraWeather' element={<ExtraWeather weatherData={data}/>}/>
       </Routes>
 
