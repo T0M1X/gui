@@ -12,7 +12,7 @@ const useGeo = () => {
                 lng:location.coords.longitude,
             },
             /*link:`http://api.openweathermap.org/data/2.5/forecast?q=London&units=metric&APPID=${process.env.REACT_APP_API_KEY}&cnt=7`,*/ 
-            link:`http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${process.env.REACT_APP_API_KEY}`,
+            link:`https://api.openweathermap.org/data/2.5/onecall?lat=${location.coords.latitude}&lon=${location.coords.longitude}&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}&units=metric`,
             /* Comment out the first link to access the weather page*/ 
         });
     };
@@ -21,7 +21,7 @@ const useGeo = () => {
         loaded:true,
         error,
         /*link:`http://api.openweathermap.org/data/2.5/forecast?q=London&units=metric&APPID=${process.env.REACT_APP_API_KEY}&cnt=7`,*/ 
-        link:`http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${process.env.REACT_APP_API_KEY}`,
+        link:`https://api.openweathermap.org/data/2.5/onecall?lat=51.5072&lon=0.1276&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}&units=metric}`,
     });}
     useEffect(() => {
         if(!("geolocation" in navigator)){
