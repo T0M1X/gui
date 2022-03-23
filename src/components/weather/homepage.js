@@ -5,12 +5,12 @@ import moment from "moment";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-function Homepage({ weatherData }) {
+function Homepage({ weatherData,name }) {
   return (
     <div className="container">
       <div className="main">
         <div className="top">
-          <p className="header">{weatherData.name}</p>
+          <p className="header">{name}</p>
           <Button
             className="button"
             inverted
@@ -27,7 +27,7 @@ function Homepage({ weatherData }) {
             <h1>{moment().format("dddd")}</h1>
             <p>{moment().format("LL")}</p>
           </div>
-          <Link to="/weather">
+          <Link to="/forecast/1">
             <button className="weatherButton">Display Weather</button>
           </Link>
         </div>

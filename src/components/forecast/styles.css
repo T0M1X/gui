@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+.main{
+    border-radius: 20px;
+    background-color : #20bf55;
+    background-image : linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    align-items: center;
+    width: 414px;
+    height: 736px;
+}
+
+.ideal{
+    background: rgb(255,166,0) !important;
+    background: linear-gradient(315deg, rgba(255,166,0,1) 30%, rgba(0,184,145,1) 100%) !important;
+}
+
+.hot{
+    background: rgb(255,166,0) !important;
+    background: radial-gradient(circle, rgba(255,166,0,1) 0%, rgba(255,123,0,1) 76%, rgba(255,252,0,1) 100%) !important;
+}
+
+.cold{
+    background: rgb(0,31,255) !important;
+    background: radial-gradient(circle, rgba(0,31,255,1) 0%, rgba(0,254,255,1) 76%, rgba(0,255,140,1) 100%) !important;
+}
+
+.top{
+    background-color: #424242;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Recursive', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.images{
+    right:20px;
+    width: 60%;
+    height: 60%
+}
+
+.header{
+    background-color: #424242;
+    color: whitesmoke;
+    margin: 10px 0px 0px 10px;
+    font-size: 25px;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Recursive', sans-serif;
+}
+
+.day{
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.temp{
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+}
+
+.refresh-button{
+    height: 40px;
+    padding-top: 3px;
+    width: 40px;
+    align-content: center;
+}
+
+.button{
+    border-radius: 20%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex .temperature{
+    font-size: 40px;
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+    width: 314px;
+}
+
+/* .sunrise-sunset{
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+    font-size: 16px;
+} */
+
+.description{
+    padding: 9px;
+    color: whitesmoke;
+    font-family: 'Recursive', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.refresh-button{
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: -9%
+}
+
+
+.title-Weekly{
+    margin-top: 10px;
+}
+
+
+th {
+    padding: 3px;
+    border-bottom: 1px solid lightcyan ;
+  }
+td{
+    padding: 3px;
+    padding-top: 10px;
+}
+td:last-child{
+    padding-bottom: 10px;
+}
+
+
+table{
+    background-color: lightskyblue;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.IconTD{
+    height: 20px;
+}
+
+td.day_table{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 70px;
+
+}
+.day_text{
+    display: block;
+}
