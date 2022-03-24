@@ -45,8 +45,20 @@ export default function App() {
         )}
         </div>
         } />
-        
-        <Route path='/extraWeather' element={<ExtraWeather weatherData={data}/>}/>
+        <Route path='/extraWeather' element={
+          <div>
+          {(typeof data.current != 'undefined') ? (
+            <ExtraWeather weatherData={data}/>
+          ): (
+            <div>
+              <Dimmer active>
+                <Loader>Loading..</Loader>
+              </Dimmer>
+          </div>
+        )}
+        </div>
+        } />
+        {/* <Route path='/extraWeather' element={<ExtraWeather weatherData={data}/>}/> */}
       </Routes>
 
     </Router>
