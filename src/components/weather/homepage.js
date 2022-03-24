@@ -30,9 +30,6 @@ function Homepage({ weatherData,name }) {
           <Link to="/weather">
             <button className="weatherButton">Display Weather</button>
           </Link>
-          <Link to="/extraWeather">
-            <button className="weatherButton">Week Forcast</button>
-          </Link>
         </div>
       </div>
     </div>
