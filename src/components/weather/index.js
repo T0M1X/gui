@@ -53,8 +53,10 @@ const WeatherCard = ({weatherData}) => (
       </div>
 
       <div className="flex">
-        <p className="temp">Sunrise: {new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-        <p className="temp">Sunset: {new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+        <img className='sunrise_set' src={'images/sunrise.png'}></img>
+        <p className="temp">{new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+        <img className='sunrise_set' src={'images/sunset.png'} ></img>
+        <p className="temp">{new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
       </div>
 
       <div className="flex">
