@@ -6,6 +6,7 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
 import ExtraWeather from './components/weather/ExtraWeather';
+import RMap from './components/rainmap';
 export default function App() {
   const [data, setData] = useState([]);
   const location = useGeo();
@@ -63,6 +64,22 @@ export default function App() {
             <div>
               {typeof data.current != 'undefined' ? (
                 <ExtraWeather weatherData={data} />
+              ) : (
+                <div>
+                  <Dimmer active>
+                    <Loader />
+                  </Dimmer>
+                </div>
+              )}
+            </div>
+          }
+        />
+        <Route
+          path="/Map"
+          element={
+            <div>
+              {typeof data.current != 'undefined' ? (
+                <RMap weatherData={data} />
               ) : (
                 <div>
                   <Dimmer active>
