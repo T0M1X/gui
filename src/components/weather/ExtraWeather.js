@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import { Button } from 'semantic-ui-react';
 import WeatherDetails from './WeatherDetails';
@@ -17,7 +17,13 @@ import WeatherDetails from './WeatherDetails';
 //   return null;
 // }
 
+// const updateCounter = () => {
+//   setCounter(counter + 1)
+// }
+
+
 function ExtraWeather({ weatherData }) {
+  const [counter, setCounter] = useState(0);
   return (
     <div className="container">
       <div className="main">
@@ -43,9 +49,12 @@ function ExtraWeather({ weatherData }) {
               <th>Humidity</th>
               <th>Sunrise - Sunset</th>
             </tr>
-            {
-              weatherData.daily.map((day) => <WeatherDetails weatherData={day}/>)
-            }
+            {weatherData.daily.map((day) => (
+              <WeatherDetails
+                weatherData={day}
+                dayNumber={weatherData.daily.indexOf(day)}
+              />
+            ))}
           </tbody>
         </table>
       </div>

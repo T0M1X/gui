@@ -1,32 +1,24 @@
 import React from 'react';
 
-// function TableBuilder({ weatherData }) {
-//   var now = new Date();
-//   var buffer = new Date();
-//   var innerHTMl = '';
-//   for (var counter = 0; counter < 7; counter = counter + 1) {
-//     buffer.setDate(now.getDate() + counter);
-//     // console.log(now.toString().substring(0, 8));
-//     // innerHTMl +=
-//     //   '<tr><td>Monday</td><td><img src="images/01d.png" className="IconTD"></img></td><td>2.06 mph</td><td>34%</td><td>5:56:26 - 6:17:17</td></tr>';
-//   }
+function WeatherDetails({ weatherData, dayNumber }) {
 
-//   return null;
-// }
+    const getDay = () => {
+        const now = new Date()
+        const buffer = new Date()
+        buffer.setDate(now.getDate() + dayNumber)
 
-function WeatherDetails({ weatherData }) {
+        return buffer.toString().substring(0, 3)
+    }
   return (
+
     <tr>
         <td>
         {
-            new Date().toString().substring(0, 3)
+            getDay()
         }
         </td>
         <td>
             <img src={`images/${weatherData.weather[0].icon}.png`} className="IconTD" />
-            {
-                console.log(weatherData.weather[0].icon)
-            }
         </td>
         <td>
             {weatherData.wind_speed}mph
