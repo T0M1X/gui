@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
-import Homepage from './components/weather/homepage';
+import Homepage from './components/weather/Homepage';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import Forecast from './components/forecast';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
