@@ -3,28 +3,28 @@ import './styles.css';
 import moment from 'moment';
 import { Button } from 'semantic-ui-react';
 import classNames from 'classnames';
-
+import { Link } from "react-router-dom";
 const refresh = () => {
   window.location.reload();
 }
 
-function Condition({description, icon}){
-  return <><img src={`images/${icon}.png`} className="images" alt="Logo" /><br></br>{description}</>
+function Condition({icon, temp,desc}){
+  return <><img src={`images/${icon}.png`} className="images" alt="Logo" /><br></br><p className="maintemp">{temp}&deg;</p ></>
 }
  
 function IsGood(props){
   const temperature=Math.round(props.temperature)
   if (temperature<=15 && temperature >= 0){
-    return <h1>Too cold for crops!</h1>
+    return <p>Too cold for crops!</p>
   }
   else if (temperature > 15 && temperature < 25){
-    return <h1>Ideal for crops!</h1>
+    return <p>Ideal for crops!</p>
   }
   else if (temperature >= 30){
-    return <h1>Too hot for crops!</h1>
+    return <p>Too hot for crops!</p>
   }
   else{
-    return <h1>It is below freezing! Way to cold for crops!</h1>
+    return <p>It is below freezing! Way to cold for crops!</p>
   }
 }
 
@@ -38,30 +38,40 @@ const WeatherCard = ({weatherData}) => (
   })}>
       <div className="top">
         <p className="header">{weatherData.timezone}</p>
-        <Button className="button" inverted color='blue'  onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
+        <Link to="/" className="button"><img className='home-button' src={`images/home.png`}></img></Link>
+        <Button className="button"onClick={refresh}><img className='refresh-button' src={`images/refresh.png`}></img></Button>
+        
       </div>
       <div className="flex">
-        {/* <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p> */}
-        <p className="temperature">{weatherData.current.temp} &deg;C</p>
-        <p className="description"><Condition description={weatherData.current.weather[0].description} icon={weatherData.current.weather[0].icon}/></p>
+      <p className="description"><Condition icon={weatherData.current.weather[0].icon} temp={weatherData.current.temp}/></p>
       </div>
-
-      <div className="flex">
+      <div className="icon_desc">
+        <p className="mini_desc">{weatherData.current.weather[0].description}</p>
+        
+      </div>
+      <div className="row">
         {/* <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p> */}
         <p className="temp">Wind Speed: {weatherData.current.wind_speed}mph</p>
+        
+      </div>
+      <div className="row">
+        
         <p className="temp">Humidity: {weatherData.current.humidity} %</p>
       </div>
-
-      <div className="flex">
+      <div className="row">
         <img className='sunrise_set' src={'images/sunrise.png'}></img>
-        <p className="temp">{new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunrise {new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+        
+      </div>
+      <div className="row">
+        
         <img className='sunrise_set' src={'images/sunset.png'} ></img>
-        <p className="temp">{new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+        <p className="temp">Sunset {new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
       </div>
 
-      <div className="flex">
-        <p className="day">Crops Assist</p>
-        <div className="description"><IsGood temperature={weatherData.current.temp}/></div>
+      <div className="row">
+        <p className="temp">Crops Assist</p>
+        <div className="temp"><IsGood temperature={weatherData.current.temp}/></div>
       </div>
   </div>
 )

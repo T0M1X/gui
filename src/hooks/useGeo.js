@@ -21,7 +21,7 @@ const useGeo = () => {
         loaded:true,
         error,
         /*link:`http://api.openweathermap.org/data/2.5/forecast?q=London&units=metric&APPID=${process.env.REACT_APP_API_KEY}&cnt=7`,*/ 
-        link:`https://api.openweathermap.org/data/2.5/onecall?lat=51.5072&lon=0.1276&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}&units=metric}`,
+        link:`https://api.openweathermap.org/data/2.5/onecall?lat=51.5072&lon=0.1276&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}&units=metric`,
     });}
     useEffect(() => {
         if(!("geolocation" in navigator)){

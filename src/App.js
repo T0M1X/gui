@@ -2,8 +2,7 @@ import './App.css';
 import React, { Component, useEffect, useState } from "react";
 import Weather from './components/weather';
 import Homepage from './components/weather/homepage';
-import { Dimmer, Loader } from 'semantic-ui-react';
-import Forecast from './components/forecast';
+import { Dimmer,Loader} from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
 import ExtraWeather from './components/weather/ExtraWeather';
@@ -30,7 +29,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={(typeof data.current!='undefined')?(<Homepage weatherData={data} name={data.name}/>):
         (<Dimmer active>
-                <Loader>Loading..</Loader>
+                <Loader/>
               </Dimmer>)} />
         <Route path='/weather' element={
           <div className="container">
@@ -39,7 +38,7 @@ export default function App() {
           ): (
             <div>
               <Dimmer active>
-                <Loader>Loading..</Loader>
+              <Loader/>
               </Dimmer>
           </div>
         )}
@@ -52,7 +51,7 @@ export default function App() {
           ): (
             <div>
               <Dimmer active>
-                <Loader>Loading..</Loader>
+              <Loader/>
               </Dimmer>
           </div>
         )}

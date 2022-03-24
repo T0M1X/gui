@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import { Button } from 'semantic-ui-react';
 import WeatherDetails from './WeatherDetails';
-
+import { Link } from "react-router-dom";
 
 function ExtraWeather({ weatherData }) {
   const [counter, setCounter] = useState(0);
@@ -10,7 +10,8 @@ function ExtraWeather({ weatherData }) {
     <div className="container">
       <div className="main">
         <div className="top">
-          <p className="header">{weatherData.name}</p>
+        <p className="header">{weatherData.timezone}</p>
+        <Link to="/" className="button"><img className='home-button' src={`images/home.png`}></img></Link>
           <Button
             className="button"
             inverted

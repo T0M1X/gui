@@ -10,7 +10,7 @@ function Homepage({ weatherData,name }) {
     <div className="container">
       <div className="main">
         <div className="top">
-          <p className="header">{name}</p>
+          <p className="header">{weatherData.timezone}</p>
           <Button
             className="button"
             inverted
