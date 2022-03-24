@@ -44,7 +44,6 @@ function ExtraWeather({ weatherData }) {
               <th>Sunrise - Sunset</th>
             </tr>
             {
-              
               weatherData.daily.map((day) => <WeatherDetails weatherData={day}/>)
             }
           </tbody>

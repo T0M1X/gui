@@ -19,7 +19,7 @@ function WeatherDetails({ weatherData }) {
     <tr>
         <td>
         {
-            new Date().toString().substring(0, 9)
+            new Date().toString().substring(0, 3)
         }
         </td>
         <td>
