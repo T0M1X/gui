@@ -29,11 +29,13 @@ function ExtraWeather({ weatherData }) {
               <th>Temp</th>
               <th>Wind-Spd</th>
               <th>Humidity</th>
-              <th>Sunrise - Sunset</th>
+              <th>Sunrise</th>
+              <th>Sunset</th>
             </tr>
             {weatherData.daily.map((day) => (
               <WeatherDetails
                 weatherData={day}
+                key={weatherData.daily.indexOf(day)}
                 dayNumber={weatherData.daily.indexOf(day)}
               />
             ))}

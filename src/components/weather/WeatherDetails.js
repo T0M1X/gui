@@ -32,6 +32,8 @@ function WeatherDetails({ weatherData, dayNumber }) {
         </td>
         <td>
             {new Date(weatherData.sunrise * 1000).toLocaleTimeString('en-IN')}
+        </td>
+        <td>
             {new Date(weatherData.sunset * 1000).toLocaleTimeString('en-IN')}
         </td>
     </tr>
