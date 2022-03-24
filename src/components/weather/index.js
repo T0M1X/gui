@@ -50,12 +50,14 @@ const WeatherCard = ({weatherData}) => (
         
       </div>
       <div className="row">
-        <p className="temp">Wind Speed: {weatherData.current.wind_speed}mph</p>
+        <p className="temp">Wind Speed</p>
+        <p>{weatherData.current.wind_speed}mph</p>
         
       </div>
       <div className="row">
         
-        <p className="temp">Humidity: {weatherData.current.humidity} %</p>
+        <p className="temp">Humidity</p>
+        <p>{weatherData.current.humidity} %</p>
       </div>
       <div className="row">
         <img className='sunrise_set' src={'images/sunrise.png'}></img>
