@@ -9,7 +9,7 @@ function RMap({ weatherData}) {
       <div className="container">
         <div className="main">
           <div className="top">
-            <p className="header">{weatherData.timezone}</p>
+            <p className="header">Map</p>
             <Button
               className="button"
               inverted
