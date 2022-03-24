@@ -3,6 +3,10 @@ import React from 'react';
 function WeatherDetails({ weatherData, dayNumber }) {
 
     const getDay = () => {
+
+        if (dayNumber === 0){
+            return "Today"
+        }
         const now = new Date()
         const buffer = new Date()
         buffer.setDate(now.getDate() + dayNumber)

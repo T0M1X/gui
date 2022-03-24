@@ -3,24 +3,6 @@ import './styles.css';
 import { Button } from 'semantic-ui-react';
 import WeatherDetails from './WeatherDetails';
 
-// function TableBuilder({ weatherData }) {
-//   var now = new Date();
-//   var buffer = new Date();
-//   var innerHTMl = '';
-//   for (var counter = 0; counter < 7; counter = counter + 1) {
-//     buffer.setDate(now.getDate() + counter);
-//     // console.log(now.toString().substring(0, 8));
-//     // innerHTMl +=
-//     //   '<tr><td>Monday</td><td><img src="images/01d.png" className="IconTD"></img></td><td>2.06 mph</td><td>34%</td><td>5:56:26 - 6:17:17</td></tr>';
-//   }
-
-//   return null;
-// }
-
-// const updateCounter = () => {
-//   setCounter(counter + 1)
-// }
-
 
 function ExtraWeather({ weatherData }) {
   const [counter, setCounter] = useState(0);
