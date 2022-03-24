@@ -63,7 +63,6 @@ const WeatherCard = ({weatherData}) => (
         <p className="day">Crops Assist</p>
         <div className="description"><IsGood temperature={weatherData.current.temp}/></div>
       </div>
-    
   </div>
 )
 
