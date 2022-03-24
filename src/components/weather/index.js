@@ -46,18 +46,40 @@ const WeatherCard = ({weatherData}) => (
         <p className="description"><Condition description={weatherData.current.weather[0].description} icon={weatherData.current.weather[0].icon}/></p>
       </div>
 
-      <div className="flex">
-        {/* <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p> */}
-        <p className="temp">Wind Speed: {weatherData.current.wind_speed}mph</p>
-        <p className="temp">Humidity: {weatherData.current.humidity} %</p>
-      </div>
-
-      <div className="flex">
+      <table>
+        <tr>
+          <td>
+          <img className='sunrise_set' src={'images/windspeedIcon.png'}></img>
+          <small>Wind Spd</small>
+          </td>
+          <td>
+          <p className="temp">{weatherData.current.wind_speed}mph</p>
+          </td>
+          <td>
+          <img className='sunrise_set' src={'images/humidity.png'}></img>
+          <small>Humidity</small>
+          </td>
+          <td>
+          <p className="temp">{weatherData.current.humidity} %</p>
+          </td>
+        </tr>
+        <tr>
+        <td>
         <img className='sunrise_set' src={'images/sunrise.png'}></img>
-        <p className="temp">{new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-        <img className='sunrise_set' src={'images/sunset.png'} ></img>
-        <p className="temp">{new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
-      </div>
+        <small>Sunrise</small>
+          </td>
+          <td>
+          <p className="temp">{new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+          </td>
+          <td>
+          <img className='sunrise_set' src={'images/sunset.png'} ></img>
+          <small>Sunset</small>
+          </td>
+          <td>
+          <p className="temp">{new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+          </td>
+        </tr>
+      </table>
 
       <div className="flex">
         <p className="day">Crops Assist</p>
