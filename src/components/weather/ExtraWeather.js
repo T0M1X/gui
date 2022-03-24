@@ -2,6 +2,23 @@ import React from "react";
 import "./styles.css";
 import { Button } from "semantic-ui-react";
 
+function TableBuilder({weatherData}){
+  var now = new Date();
+  var buffer = new Date();
+  var innerHTMl = ''
+  for (var counter = 0; counter < 7; counter = counter+1){
+    buffer.setDate(now.getDate() +counter);
+    innerHTMl +=  '<tr><td>Monday</td><td><img src="images/01d.png" className="IconTD"></img></td><td>2.06 mph</td><td>34%</td><td>5:56:26 - 6:17:17</td></tr>'
+    
+  }
+
+  return {innerHTMl};
+}
+
+
+
+
+
 function ExtraWeather({ weatherData }) {
   return (
     <div className="container">
@@ -16,14 +33,13 @@ function ExtraWeather({ weatherData }) {
               window.location.reload();
             }}
           >
-            <img className="refresh-button" src={`images/refresh.png`}></img>
+           <img className="refresh-button" src={`images/refresh.png`}></img>
           </Button>
         </div>
 
         <h1 className="title-Weekly">
           Weekly View
         </h1>
-
         <table>
           <tr>
             <th>
@@ -43,42 +59,8 @@ function ExtraWeather({ weatherData }) {
             </th>
 
           </tr>
-          <tr>
-            <td>
-              Monday
-            </td>
-            <td>
-              <img src="images/01d.png" className="IconTD"></img>
-            </td>
-            <td>
-              2.06 mph
-            </td>
-            <td>
-              34%
-            </td>
-            <td>
-              5:56:26 - 6:17:17
-            </td>
+          <TableBuilder weatherData = {weatherData}/>
 
-          </tr>
-          <tr>
-          <td>
-              Tuesday
-            </td>
-            <td>
-            <img src="images/04d.png" className="IconTD"></img>
-            </td>
-            <td>
-              3.62 mph
-            </td>
-            <td>
-              15%
-            </td>
-            <td>
-              5:56:26 - 6:17:17
-            </td>
-
-          </tr>
         </table>
 
 
