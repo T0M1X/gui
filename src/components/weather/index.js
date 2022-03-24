@@ -43,14 +43,13 @@ const WeatherCard = ({weatherData}) => (
         
       </div>
       <div className="flex">
-      <p className="description"><Condition icon={weatherData.current.weather[0].icon} temp={weatherData.current.temp}/></p>
+      <div className="description"><Condition icon={weatherData.current.weather[0].icon} temp={weatherData.current.temp}/></div>
       </div>
       <div className="icon_desc">
         <p className="mini_desc">{weatherData.current.weather[0].description}</p>
         
       </div>
       <div className="row">
-        {/* <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p> */}
         <p className="temp">Wind Speed: {weatherData.current.wind_speed}mph</p>
         
       </div>
