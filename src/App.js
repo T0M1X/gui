@@ -1,65 +1,79 @@
 import './App.css';
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from 'react';
 import Weather from './components/weather';
 import Homepage from './components/weather/homepage';
-import { Dimmer,Loader} from 'semantic-ui-react';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
 import ExtraWeather from './components/weather/ExtraWeather';
 export default function App() {
-
   const [data, setData] = useState([]);
-  const location=useGeo();
+  const location = useGeo();
   useEffect(() => {
     const fetchData = async () => {
-      if(location.loaded){
-      fetch(location.link)
-      .then(res => res.json())
-      .then(result => {
-        setData(result)
-        console.log(result)
-      });}
-    }
+      if (location.loaded) {
+        fetch(location.link)
+          .then((res) => res.json())
+          .then((result) => {
+            setData(result);
+            console.log(result);
+          });
+      }
+    };
     fetchData();
-  }, [location])
-  
+  }, [location]);
 
   return (
     <Router>
       <Routes>
-        <Route path='/' element={(typeof data.current!='undefined')?(<Homepage weatherData={data} name={data.name}/>):
-        (<Dimmer active>
-                <Loader/>
-              </Dimmer>)} />
-        <Route path='/weather' element={
-          <div className="container">
-          {(typeof data.current != 'undefined') ? (
-            <Weather weatherData={data}/>
-          ): (
-            <div>
+        {/* path to homepage */}
+        <Route
+          path="/"
+          element={
+            typeof data.current != 'undefined' ? (
+              <Homepage weatherData={data} name={data.name} />
+            ) : (
               <Dimmer active>
-              <Loader/>
+                <Loader />
               </Dimmer>
-          </div>
-        )}
-        </div>
-        } />
-        <Route path='/extraWeather' element={
-          <div>
-          {(typeof data.current != 'undefined') ? (
-            <ExtraWeather weatherData={data}/>
-          ): (
+            )
+          }
+        />
+        {/* path to main weather page */}
+        <Route
+          path="/weather"
+          element={
+            <div className="container">
+              {typeof data.current != 'undefined' ? (
+                <Weather weatherData={data} />
+              ) : (
+                <div>
+                  <Dimmer active>
+                    <Loader />
+                  </Dimmer>
+                </div>
+              )}
+            </div>
+          }
+        />
+        {/* path to weekly forecast page */}
+        <Route
+          path="/extraWeather"
+          element={
             <div>
-              <Dimmer active>
-              <Loader/>
-              </Dimmer>
-          </div>
-        )}
-        </div>
-        } />
-        {/* <Route path='/extraWeather' element={<ExtraWeather weatherData={data}/>}/> */}
+              {typeof data.current != 'undefined' ? (
+                <ExtraWeather weatherData={data} />
+              ) : (
+                <div>
+                  <Dimmer active>
+                    <Loader />
+                  </Dimmer>
+                </div>
+              )}
+            </div>
+          }
+        />
       </Routes>
-
     </Router>
   );
 }

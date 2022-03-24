@@ -138,6 +138,10 @@ br{
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: -9%
+    
+}
+.refresh-button:hover{
+    cursor: pointer;
 }
 
 

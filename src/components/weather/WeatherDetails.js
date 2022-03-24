@@ -16,23 +16,29 @@ function WeatherDetails({ weatherData, dayNumber }) {
   return (
 
     <tr>
+        {/* day */}
         <td>
         {
             getDay()
         }
         </td>
+        {/* picture for weather */}
         <td>
             <img src={`images/${weatherData.weather[0].icon}.png`} className="IconTD" />
         </td>
+        {/* wind speed */}
         <td>
-            {weatherData.wind_speed}mph
+            {weatherData.wind_speed}
         </td>
+        {/* humidity */}
         <td>
-            {weatherData.humidity}%
+            {weatherData.humidity}
         </td>
+        {/* sunrise */}
         <td>
             {new Date(weatherData.sunrise * 1000).toLocaleTimeString('en-IN')}
         </td>
+        {/* sunset */}
         <td>
             {new Date(weatherData.sunset * 1000).toLocaleTimeString('en-IN')}
         </td>
