@@ -33,7 +33,14 @@ function Homepage({ weatherData,name }) {
           <Link to="/extraWeather">
             <button className="weatherButton">Week Forcast</button>
           </Link>
+          <br></br>
+          <Link to="/Map">
+            <button className="weatherButton">Rain Map</button>
+          </Link>
         </div>
+        <div>
+        
+      </div>
       </div>
     </div>
   );
