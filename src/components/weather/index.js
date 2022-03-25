@@ -45,12 +45,15 @@ const WeatherCard = ({ weatherData }) => (
     {/* main container and top bar */}
     <div className="top">
       <p className="header">{weatherData.timezone}</p>
+      <div>
       <Link to="/" className="button">
         <img className="home-button" src={`images/home.png`}></img>
       </Link>
       <Button className="button" onClick={refresh}>
         <img className="refresh-button" src={`images/refresh.png`}></img>
       </Button>
+      </div>
+
     </div>
     <div className="flex">
       <div className="description">
