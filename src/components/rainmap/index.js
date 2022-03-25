@@ -8,6 +8,7 @@ function RMap({ weatherData}) {
     return (
       <div className="container">
         <div className="main">
+        <div className="abs">
           <div className="top">
             <p className="header">Map</p>
             <div>
@@ -24,6 +25,7 @@ function RMap({ weatherData}) {
             <Link to="/" className="button"><img className='home-button' src={`images/home.png`}></img></Link>              
             </div>
 
+          </div>
           </div>
           <div>
           <iframe src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3" height="100%" width="100%"/>
