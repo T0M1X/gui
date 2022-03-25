@@ -13,22 +13,20 @@ function ExtraWeather({ weatherData }) {
         <div className="top">
           <p className="header">{weatherData.timezone}</p>
           <div>
-          <Link to="/" className="button">
-            <img className="home-button" src={`images/home.png`}></img>
-          </Link>
-          <Button
-            className="button"
-            inverted
-            color="blue"
-            onClick={() => {
-              window.location.reload();
-            }}
-          >
-            <img className="refresh-button" src={`images/refresh.png`}></img>
-          </Button>
-
+            <Link to="/" className="button">
+              <img className="home-button" src={`images/home.png`}></img>
+            </Link>
+            <Button
+              className="button"
+              inverted
+              color="blue"
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              <img className="refresh-button" src={`images/refresh.png`}></img>
+            </Button>
           </div>
-
         </div>
         <h1>Weekly View</h1>
         {/* main table with all info */}

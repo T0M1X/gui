@@ -1,12 +1,13 @@
-import React from "react";
-import "./styles.css";
-import "./Homepage.css";
-import moment from "moment";
-import { Button } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './styles.css';
+import './Homepage.css';
+import moment from 'moment';
+import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-function Homepage({ weatherData,name }) {
+function Homepage({ weatherData, name }) {
   return (
+    // Main conatiner and top bar
     <div className="container">
       <div className="main">
         <div className="top">
@@ -23,10 +24,12 @@ function Homepage({ weatherData,name }) {
           </Button>
         </div>
         <div>
+          {/* The day */}
           <div className="day">
-            <h1>{moment().format("dddd")}</h1>
-            <p>{moment().format("LL")}</p>
+            <h1>{moment().format('dddd')}</h1>
+            <p>{moment().format('LL')}</p>
           </div>
+          {/* Buttons to go to each page */}
           <Link to="/weather">
             <button className="weatherButton">Display Weather</button>
           </Link>
@@ -38,9 +41,7 @@ function Homepage({ weatherData,name }) {
             <button className="weatherButton">Rain Map</button>
           </Link>
         </div>
-        <div>
-        
-      </div>
+        <div></div>
       </div>
     </div>
   );

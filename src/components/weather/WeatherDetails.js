@@ -2,6 +2,7 @@ import React from 'react';
 
 function WeatherDetails({ weatherData, dayNumber }) {
 
+    // Returns the day for first column
     const getDay = () => {
 
         if (dayNumber === 0){

@@ -19,7 +19,7 @@ function Condition({ icon, temp, desc }) {
   );
 }
 
-//
+// Gives summary on whether the conditions are good for crops for farmers to act on
 function IsGood(props) {
   const temperature = Math.round(props.temperature);
   if (temperature <= 15 && temperature >= 0) {
@@ -46,14 +46,13 @@ const WeatherCard = ({ weatherData }) => (
     <div className="top">
       <p className="header">{weatherData.timezone}</p>
       <div>
-      <Link to="/" className="button">
-        <img className="home-button" src={`images/home.png`}></img>
-      </Link>
-      <Button className="button" onClick={refresh}>
-        <img className="refresh-button" src={`images/refresh.png`}></img>
-      </Button>
+        <Link to="/" className="button">
+          <img className="home-button" src={`images/home.png`}></img>
+        </Link>
+        <Button className="button" onClick={refresh}>
+          <img className="refresh-button" src={`images/refresh.png`}></img>
+        </Button>
       </div>
-
     </div>
     <div className="flex">
       <div className="description">

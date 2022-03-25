@@ -1,120 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
 
-.main{
-    background-color : #20bf55;
-    background-image : linear-gradient(315deg, #20bf55 0%, #01baef 74%);
-    align-items: center;
-    width: 414px;
-    height: 736px;
+.main {
+  background-color: #20bf55;
+  background-image: url(../../../public/images/photo-1558486012-817176f84c6d.jpg);
+  background-size: auto;
+  align-items: center;
+  width: 414px;
+  height: 736px;
 }
 
-.ideal{
-    background: rgb(255,166,0) !important;
-    background: linear-gradient(315deg, rgba(255,166,0,1) 30%, rgba(0,184,145,1) 100%) !important;
+.ideal {
+  background: rgb(255, 166, 0) !important;
+  background: linear-gradient(
+    315deg,
+    rgba(255, 166, 0, 1) 30%,
+    rgba(0, 184, 145, 1) 100%
+  ) !important;
 }
 
-.hot{
-    background: rgb(255,166,0) !important;
-    background: radial-gradient(circle, rgba(255,166,0,1) 0%, rgba(255,123,0,1) 76%, rgba(255,252,0,1) 100%) !important;
+.hot {
+  background: rgb(255, 166, 0) !important;
+  background: radial-gradient(
+    circle,
+    rgba(255, 166, 0, 1) 0%,
+    rgba(255, 123, 0, 1) 76%,
+    rgba(255, 252, 0, 1) 100%
+  ) !important;
 }
 
-.cold{
-    background: rgb(0,31,255) !important;
-    background: radial-gradient(circle, rgba(0,31,255,1) 0%, rgba(0,254,255,1) 76%, rgba(0,255,140,1) 100%) !important;
+.cold {
+  background: rgb(0, 31, 255) !important;
+  background: radial-gradient(
+    circle,
+    rgba(0, 31, 255, 1) 0%,
+    rgba(0, 254, 255, 1) 76%,
+    rgba(0, 255, 140, 1) 100%
+  ) !important;
 }
 
-.top{
-    background-color: #424242;
-    color: whitesmoke;
-    padding: 10px;
-    
-    font-family: 'Recursive', sans-serif;
-    display: flex;
-    justify-content: space-between;
+.top {
+  background-color: #424242;
+  color: whitesmoke;
+  padding: 10px;
+
+  font-family: 'Recursive', sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
-br{
-    margin:0;
-    padding:0;
+br {
+  margin: 0;
+  padding: 0;
 }
-.icon_desc{
-    margin-top: 0;
-    padding-top:0;
+.icon_desc {
+  margin-top: 0;
+  padding-top: 0;
 }
-.images{
-    
-    height:100px;
+.images {
+  height: 100px;
 }
 
-.header{
-    background-color: #424242;
-    color: whitesmoke;
-    margin: 10px 0px 0px 10px;
-    font-size: 25px;
-    
-    font-family: 'Recursive', sans-serif;
+.header {
+  background-color: #424242;
+  color: whitesmoke;
+  margin: 10px 0px 0px 10px;
+  font-size: 25px;
+
+  font-family: 'Recursive', sans-serif;
 }
 
-.day{
-    padding: 15px;
-    color: whitesmoke;
-    font-family: 'Recursive', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
+.day {
+  padding: 15px;
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
 }
-.maintemp{
-    color: whitesmoke;
-    font-family: 'Recursive', sans-serif;
-    font-size: 50px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    padding-left: 27px;
+.maintemp {
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 50px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-left: 27px;
 }
-.temp{
-    
-    color: whitesmoke;
-    font-family: 'Recursive', sans-serif;
-    font-size: 18px;
+.temp {
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 18px;
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-    padding-left:5%;
-    padding-right:5%;
-    background: rgba(255, 255, 255, 0.178);
-    border-radius:10px;
-    margin-bottom: 10px;
-    
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  background: rgb(41 31 31 / 18%);
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.home-button{
-    padding-right: 0px;
-    height:50px;
-    align-content: center;
+.home-button {
+  padding-right: 0px;
+  height: 50px;
+  align-content: center;
 }
-.refresh-button{
-    padding-left:0px;
-    height:40px;
-    align-content: center;
-}
-
-.button{
-    border-radius: 20%;
-    background-color: transparent;
-    border-width: 0;
-    border:0ch
+.refresh-button {
+  padding-left: 0px;
+  height: 40px;
+  align-content: center;
 }
 
-.flex{
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 0px;
+.button {
+  border-radius: 20%;
+  background-color: transparent;
+  border-width: 0;
+  border: 0ch;
 }
-.flex .temperature{
-    font-size: 40px;
-    padding: 15px;
-    color: whitesmoke;
-    font-family: 'Recursive', sans-serif;
-    width: 314px;
+
+.flex {
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+.flex .temperature {
+  font-size: 40px;
+  padding: 15px;
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  width: 314px;
 }
 
 /* .sunrise-sunset{
@@ -124,68 +136,61 @@ br{
     font-size: 16px;
 } */
 
-.description{
-    padding-top: 10%;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: whitesmoke;
-    font-family: 'Recursive', sans-serif;
-    font-size: 24px;
-    
+.description {
+  padding-top: 10%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 24px;
 }
 
-.refresh-button{
-    height: 42px;
-    padding-bottom: 5px;
-    align-content: center;
-    
+.refresh-button {
+  height: 42px;
+  padding-bottom: 5px;
+  align-content: center;
 }
-.refresh-button:hover{
-    cursor: pointer;
-}
-
-
-.title-Weekly{
-    margin-top: 10px;
+.refresh-button:hover {
+  cursor: pointer;
 }
 
+.title-Weekly {
+  margin-top: 10px;
+}
 
 th {
-    padding: 3px;
-    border-bottom: 1px solid lightcyan ;
-  }
-td{
-    padding: 3px;
-    padding-top: 10px;
+  padding: 3px;
+  border-bottom: 1px solid lightcyan;
 }
-td:last-child{
-    padding-bottom: 10px;
+td {
+  padding: 3px;
+  padding-top: 10px;
 }
-
-
-table{
-    background-color: rgb(0, 140, 255,0.2);
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-  }
-.IconTD{
-    height: 20px;
+td:last-child {
+  padding-bottom: 10px;
 }
 
-td.day_table{
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    width: 70px;
-
+table {
+  background-color: rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
 }
-.day_text{
-    display: block;
+.IconTD {
+  height: 20px;
 }
 
-.sunrise_set{
-    height: 75px;
-    
+td.day_table {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 70px;
+}
+.day_text {
+  display: block;
+}
+
+.sunrise_set {
+  height: 75px;
 }

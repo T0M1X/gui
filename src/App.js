@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useGeo from './hooks/useGeo';
 import ExtraWeather from './components/weather/ExtraWeather';
 import RMap from './components/rainmap';
+
+// Makes calls to API
 export default function App() {
   const [data, setData] = useState([]);
   const location = useGeo();
@@ -74,6 +76,7 @@ export default function App() {
             </div>
           }
         />
+        {/* Path to map page */}
         <Route
           path="/Map"
           element={
